@@ -4,13 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>שחר אלומיניום | פתרונות אלומיניום פרימיום</title>
-    
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap" rel="stylesheet">
     
-    <script src="https://cdn.userway.org/widget.js" data-account="PLACEHOLDER"></script>
-
     <style>
-        /* הגדרת משתני צבע מתוך הלוגו ואפיון היוקרה */
         :root {
             --brand-blue: #008ece;
             --brand-dark-blue: #006b9b;
@@ -22,7 +18,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Heebo', sans-serif; }
         body { background-color: var(--white); color: var(--charcoal); overflow-x: hidden; }
 
-        /* תפריט עליון */
         header { 
             display: flex; justify-content: space-between; align-items: center;
             padding: 15px 5%; background: var(--white); position: fixed; 
@@ -32,11 +27,10 @@
         nav a { margin-right: 30px; text-decoration: none; color: var(--charcoal); font-weight: 700; transition: 0.3s; }
         nav a:hover { color: var(--brand-blue); }
 
-        /* מסך פתיחה - Hero */
         .hero { 
             height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center;
             background: linear-gradient(rgba(26,26,26,0.5), rgba(26,26,26,0.8)), 
-            url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2000') center/cover; 
+            url('תמונת רקע ראשית .jpg') center/cover; 
             color: var(--white); padding: 0 20px;
         }
         .hero h1 { font-size: 3.5rem; font-weight: 900; margin-bottom: 20px; letter-spacing: -1px; max-width: 900px; }
@@ -45,48 +39,30 @@
         .cta-btn { 
             background-color: var(--brand-blue); color: var(--white); padding: 18px 45px; 
             text-decoration: none; font-size: 1.2rem; border-radius: 4px; font-weight: 700; 
-            transition: all 0.3s ease; display: inline-block;
+            display: inline-block; transition: 0.3s;
         }
         .cta-btn:hover { background-color: var(--brand-dark-blue); transform: translateY(-3px); }
 
-        /* הצהרת כוונות */
-        .why-us { padding: 100px 10%; text-align: center; background-color: var(--bg-light); }
-        .why-us p { font-size: 1.4rem; max-width: 900px; margin: 0 auto; line-height: 1.8; font-weight: 300; }
-        .why-us strong { color: var(--brand-blue); font-weight: 700; }
-
-        /* גלריית פורטפוליו */
         .portfolio { padding: 100px 5%; }
         .filters { text-align: center; margin-bottom: 50px; }
         .filter-btn { 
             background: none; border: 1px solid var(--charcoal); padding: 10px 25px; 
-            margin: 0 10px; cursor: pointer; border-radius: 30px; font-weight: 700; transition: 0.3s;
+            margin: 5px; cursor: pointer; border-radius: 30px; font-weight: 700; transition: 0.3s;
         }
         .filter-btn:hover, .filter-btn.active { background: var(--charcoal); color: var(--white); }
         
-        /* גריד א-סימטרי בסיסי */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
-        .grid-item { overflow: hidden; height: 400px; position: relative; border-radius: 4px; }
-        .grid-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
-        .grid-item:hover img { transform: scale(1.08); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .grid-item { overflow: hidden; border-radius: 8px; background: var(--bg-light); padding-bottom: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .grid-item img { width: 100%; height: 250px; object-fit: cover; }
+        .grid-item h3 { text-align: center; margin-top: 15px; font-size: 1.1rem; color: var(--brand-dark-blue); }
+        
+        /* עיצוב הקרדיטים */
+        .credits { text-align: center; font-size: 0.75rem; color: #777; margin-top: 5px; font-weight: 300; direction: ltr; }
 
-        /* הוכחה חברתית */
-        .trust { padding: 100px 10%; background-color: var(--charcoal); color: var(--white); text-align: center; }
-        .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 50px; }
-        .quote { font-size: 1.2rem; font-style: italic; font-weight: 300; line-height: 1.6; }
-        .author { margin-top: 20px; font-weight: 700; color: var(--brand-blue); }
+        footer { text-align: center; padding: 40px; background: var(--bg-light); margin-top: 50px; }
+        footer img { height: 50px; margin-bottom: 20px; }
 
-        /* כפתור וואטסאפ מרחף */
-        .float-wa { 
-            position: fixed; bottom: 40px; left: 40px; background-color: #25d366; color: white; 
-            width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; 
-            justify-content: center; font-size: 35px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
-            z-index: 1000; text-decoration: none; transition: 0.3s;
-        }
-        .float-wa:hover { transform: scale(1.1); }
-
-        /* רספונסיביות לנייד */
         @media (max-width: 768px) {
-            .trust-grid { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.5rem; }
             nav { display: none; }
         }
@@ -96,60 +72,55 @@
 
     <header>
         <div class="logo">
-            <img src="1000012965.jpg" alt="שחר אלומיניום - לוגו">
+            <img src="IMG-20230305-WA0007.jpg" alt="שחר אלומיניום - לוגו">
         </div>
         <nav>
-            <a href="#why-us">המומחיות שלנו</a>
             <a href="#portfolio">עבודות נבחרות</a>
-            <a href="#trust">לקוחות ממליצים</a>
         </nav>
     </header>
 
     <section class="hero">
         <div>
-            <h1>30 שנות מומחיות באלומיניום וזכוכית. שקט נפשי מהרגע הראשון.</h1>
-            <p>תכנון מוקפד, איטום מושלם ועבודה נקייה ללא פשרות. פתרונות בנייה קלה מותאמים אישית לבית שלך.</p>
-            <a href="https://wa.me/972500000000" class="cta-btn">תאמו פגישת ייעוץ לתכנון יוקרתי</a>
+            <h1>30 שנות מומחיות באלומיניום וזכוכית.</h1>
+            <p>תכנון מוקפד, איטום מושלם ועבודה נקייה ללא פשרות.</p>
+            <a href="https://wa.me/972500000000" class="cta-btn">תאמו פגישת ייעוץ</a>
         </div>
-    </section>
-
-    <section id="why-us" class="why-us">
-        <p>אנחנו מביאים עשרות שנות ניסיון ושטח. <strong>אנחנו מאמינים בעבודה מקצועית, שקופה וישירה.</strong> עם שימוש בפרופילים האיכותיים ביותר וגימור ברמת המילימטר, אנחנו מתחייבים לתוצאה שתחזיק מעמד לאורך שנים, בליווי אישי ובלי לכלוך מיותר.</p>
     </section>
 
     <section id="portfolio" class="portfolio">
         <div class="filters">
             <button class="filter-btn active" onclick="filterGallery('all', this)">הכל</button>
-            <button class="filter-btn" onclick="filterGallery('sunroom', this)">סגירות חורף</button>
-            <button class="filter-btn" onclick="filterGallery('pergola', this)">פרגולות אלומיניום</button>
+            <button class="filter-btn" onclick="filterGallery('sunroom', this)">סגירות אלומיניום</button>
+            <button class="filter-btn" onclick="filterGallery('pergola', this)">פרגולות</button>
             <button class="filter-btn" onclick="filterGallery('windows', this)">חלונות ודלתות</button>
+            <button class="filter-btn" onclick="filterGallery('shading', this)">מוצרי הצללה</button>
         </div>
         
         <div class="grid">
-            <div class="grid-item sunroom"><img src="20251214_130418~2.jpg" alt="עבודת אלומיניום 1"></div>
-            <div class="grid-item pergola"><img src="20260323_154412.jpg" alt="עבודת אלומיניום 2"></div>
-            <div class="grid-item windows"><img src="20260323_154425.jpg" alt="עבודת אלומיניום 3"></div>
-        </div>
-    </section>
-
-    <section id="trust" class="trust">
-        <div class="trust-grid">
-            <div>
-                <p class="quote">"הירידה לפרטים של שחר היא משהו שלא רואים בענף. איטום מושלם וגימור מרהיב."</p>
-                <p class="author">- יעל, אדריכלית פנים</p>
+            <div class="grid-item sunroom">
+                <img src="MOMA_ed-(44)תמונת כפתור סגירות מאלומיניום .jpg" alt="סגירת חורף">
+                <h3>סגירת חורף מאלומיניום</h3>
+                <div class="credits">Design: MOMA DESIGN | Photo: EINAT DEKEL</div>
             </div>
-            <div>
-                <p class="quote">"סגרו לנו את המרפסת ביומיים עבודה, בלי טיפת לכלוך. איכות שמרגישים."</p>
-                <p class="author">- משפחת לוי</p>
+            <div class="grid-item pergola">
+                <img src="כפתור ראשי פרגולות מאלומיניום .jpg" alt="פרגולה">
+                <h3>פרגולת אלומיניום</h3>
             </div>
-            <div>
-                <p class="quote">"התכנון ההנדסי המדויק מראש חסך לנו המון כאב ראש מול הקבלן בשטח."</p>
-                <p class="author">- רועי, מנהל פרויקטים</p>
+            <div class="grid-item windows">
+                <img src="חלונות ודלתות בלגיים.jpg" alt="חלונות בלגיים">
+                <h3>חלונות ודלתות בלגיים</h3>
+            </div>
+            <div class="grid-item shading">
+                <img src="כפתור תריסים וצלונים.jpg" alt="מוצרי הצללה">
+                <h3>תריסי אור וצלונים</h3>
             </div>
         </div>
     </section>
 
-    <a href="https://wa.me/972500000000" class="float-wa">💬</a>
+    <footer>
+        <img src="IMG-20230305-WA0007.jpg" alt="שחר אלומיניום - לוגו תחתון">
+        <p>© 2026 שחר אלומיניום. כל הזכויות שמורות.</p>
+    </footer>
 
     <script>
         function filterGallery(category, btnElement) {
