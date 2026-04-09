@@ -12,9 +12,9 @@
     <style>
         /* הגדרת משתני צבע מתוך הלוגו ואפיון היוקרה */
         :root {
-            --brand-blue: #008ece; /* הכחול מהלוגו */
+            --brand-blue: #008ece;
             --brand-dark-blue: #006b9b;
-            --charcoal: #1a1a1a; /* אפור פחם עמוק */
+            --charcoal: #1a1a1a;
             --white: #ffffff;
             --bg-light: #f4f4f4;
         }
@@ -28,7 +28,7 @@
             padding: 15px 5%; background: var(--white); position: fixed; 
             width: 100%; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-        .logo img { height: 60px; } /* כאן ישולב הלוגו שלך */
+        .logo img { height: 60px; }
         nav a { margin-right: 30px; text-decoration: none; color: var(--charcoal); font-weight: 700; transition: 0.3s; }
         nav a:hover { color: var(--brand-blue); }
 
@@ -39,8 +39,8 @@
             url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2000') center/cover; 
             color: var(--white); padding: 0 20px;
         }
-        .hero h1 { font-size: 4rem; font-weight: 900; margin-bottom: 20px; letter-spacing: -1px; }
-        .hero p { font-size: 1.5rem; font-weight: 300; margin-bottom: 40px; }
+        .hero h1 { font-size: 3.5rem; font-weight: 900; margin-bottom: 20px; letter-spacing: -1px; max-width: 900px; }
+        .hero p { font-size: 1.5rem; font-weight: 300; margin-bottom: 40px; max-width: 800px; }
         
         .cta-btn { 
             background-color: var(--brand-blue); color: var(--white); padding: 18px 45px; 
@@ -88,7 +88,7 @@
         @media (max-width: 768px) {
             .trust-grid { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.5rem; }
-            nav { display: none; } /* במערכת מלאה נוסיף תפריט המבורגר */
+            nav { display: none; }
         }
     </style>
 </head>
@@ -101,28 +101,28 @@
         <nav>
             <a href="#why-us">המומחיות שלנו</a>
             <a href="#portfolio">עבודות נבחרות</a>
-            <a href="#trust">אדריכלים ממליצים</a>
+            <a href="#trust">לקוחות ממליצים</a>
         </nav>
     </header>
 
     <section class="hero">
         <div>
-            <h1>אמנות באלומיניום. שקט נפשי לשנים.</h1>
-            <p>הנדסת חוויות מגורים בבנייה קלה, ללא לכלוך ובדיוק של מילימטר.</p>
+            <h1>30 שנות מומחיות באלומיניום וזכוכית. שקט נפשי מהרגע הראשון.</h1>
+            <p>תכנון מוקפד, איטום מושלם ועבודה נקייה ללא פשרות. פתרונות בנייה קלה מותאמים אישית לבית שלך.</p>
             <a href="https://wa.me/972500000000" class="cta-btn">תאמו פגישת ייעוץ לתכנון יוקרתי</a>
         </div>
     </section>
 
     <section id="why-us" class="why-us">
-        <p>אנחנו בשחר אלומיניום <strong>לא רק מתקינים. אנחנו מהנדסים חוויות מגורים.</strong> עם שימוש בסגסוגות הפרימיום המתקדמות בעולם, גימור ברמת המילימטר ושירות שמותאם לאדריכלים וללקוחות קצה שלא מתפשרים על שלמות.</p>
+        <p>אנחנו מביאים עשרות שנות ניסיון ושטח. <strong>אנחנו מאמינים בעבודה מקצועית, שקופה וישירה.</strong> עם שימוש בפרופילים האיכותיים ביותר וגימור ברמת המילימטר, אנחנו מתחייבים לתוצאה שתחזיק מעמד לאורך שנים, בליווי אישי ובלי לכלוך מיותר.</p>
     </section>
 
     <section id="portfolio" class="portfolio">
         <div class="filters">
             <button class="filter-btn active" onclick="filterGallery('all', this)">הכל</button>
-            <button class="filter-btn" onclick="filterGallery('sunroom', this)">סגירות מרפסת</button>
+            <button class="filter-btn" onclick="filterGallery('sunroom', this)">סגירות חורף</button>
             <button class="filter-btn" onclick="filterGallery('pergola', this)">פרגולות אלומיניום</button>
-            <button class="filter-btn" onclick="filterGallery('windows', this)">חלונות פנורמיים</button>
+            <button class="filter-btn" onclick="filterGallery('windows', this)">חלונות ודלתות</button>
         </div>
         
         <div class="grid">
